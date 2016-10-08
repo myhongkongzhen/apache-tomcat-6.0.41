@@ -6,22 +6,31 @@
 		<echo>清除舊的工程文件目錄</echo> 
 		<delete dir="${tomcat.home}/webapps" />
 		<delete dir="${tomcat.home}/work" />
+		<delete dir="${tomcat.home}/temp" />
 		<delete dir="${tomcat.home}/logs" />
 		<delete dir="${tomcat.home}/conf/catalina/localhost" />
  
 		<mkdir dir="${tomcat.home}/webapps" />
 		<mkdir dir="${tomcat.home}/work" />
+		<mkdir dir="${tomcat.home}/temp" />
 		<mkdir dir="${tomcat.home}/logs" />
 		<mkdir dir="${tomcat.home}/conf/catalina/localhost" />
 	</target>
 
-	<target name="publish-tomcat" depends="clean" description="發佈WAR文件到TOMCAT服務器中">
-		<echo>拷貝${nexus.version}文件到TOMCAT服務器中</echo>
+	<target name="nexus" depends="clean" description="發佈WAR文件到TOMCAT服務器中">
+		<echo>拷貝nexus-${nexus.version}.war文件到TOMCAT服務器中</echo>
 		<copy todir="${tomcat.home}/webapps">
 			<fileset dir="" includes="nexus.war" />
 		</copy>
 	</target>
 
-	<target name="main" depends="clean,publish-tomcat" description="運行默認的TARGET" />
+	<target name="hudson" depends="clean" description="發佈WAR文件到TOMCAT服務器中">
+		<echo>拷貝hudson-${hudson.version}.war文件到TOMCAT服務器中</echo>
+		<copy todir="${tomcat.home}/webapps">
+			<fileset dir="" includes="hudson.war" />
+		</copy>
+	</target>
+
+	<target name="main" depends="clean,nexus,hudson" description="運行默認的TARGET" />
 
 </project>
