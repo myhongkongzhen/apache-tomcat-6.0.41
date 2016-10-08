@@ -1,6 +1,0 @@
-十月 04, 2016 5:24:25 下午 org.apache.catalina.core.ApplicationContext log
-信息: Configuring Nexus in vanilla WAR...
-十月 04, 2016 5:24:25 下午 org.apache.catalina.core.ApplicationContext log
-信息: Setting Plexus basedir context variable to (discovered from Servlet container): D:\01_opensource\programmes\apache-tomcat-6.0.41\webapps\nexus\WEB-INF
-十月 04, 2016 5:25:44 下午 org.apache.catalina.core.ApplicationContext log
-信息: Key[type=org.sonatype.nexus.web.NexusRestletServlet, annotation=[none]]: [Noelios Restlet Engine] - Attaching application: org.sonatype.nexus.rest.NexusApplication@35682bda to URI: /nexus
